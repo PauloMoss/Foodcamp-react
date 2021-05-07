@@ -118,25 +118,18 @@ button {
     background: #32B72F;
 }
 .confirme_pedido {
-    position: fixed;
-    z-index: 15;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    top: calc(50% - 150px);
-    left: calc(50% - 160px);
     width: 320px;
-    min-height: 300px;
+    min-height: 150px;
     background-color: #50D074;
     color: #fff;
     border-radius: 9px;
-    padding: 20px 10px 10px 10px;
+    margin: 75px auto 10px auto;
+    padding: 10px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-}
-.confirme_pedido p {
-    font-weight: bold;
-    margin-bottom: 15px;
 }
 .menuEscolhido {
     width: 100%;
@@ -160,14 +153,22 @@ button {
     height: 40px;
     font-size: 18px;
     font-weight: bold;
-    color: #50D074;
-    margin-top: 15px
+    color: #fff;
+    background-color: #50D074;
+    
+    width: 300px;
+    padding: 8px 10%;
+}
+.finalizar {
+    display: flex;
+    justify-content: center;
 }
 .cancelar {
     height: 15%;
     font-size: 16px;
     background: inherit;
-    color: #fff;
+    color: #333;
+    margin: 0px auto;
 }
 .oculto {
     display: none;

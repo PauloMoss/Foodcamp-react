@@ -18,8 +18,8 @@ export default function RevisaoPedido(props) {
         return (
             <>
                 <Topo />
+                <div className="titulo_lista">Revise seu pedido</div>
                 <div className="confirme_pedido">
-                    <p>Confirme seu pedido</p>
                     <div className="menuEscolhido">
                         {prato.map(p=> (<div><span>{p.nome} {(p.quantidade === 1) ? "" : `(x${p.quantidade})`}</span><span>R$ {(String(p.valor.toFixed(2))).replace(".", ",")}</span></div>))}
                         {bebida.map(b=> (<div><span>{b.nome} {(b.quantidade === 1) ? "" : `(x${b.quantidade})`}</span><span>R$ {(String(b.valor.toFixed(2))).replace(".", ",")}</span></div>))}
@@ -27,9 +27,10 @@ export default function RevisaoPedido(props) {
 
                         <div className="total"><span>TOTAL</span><span>R$ {valorTotalDoPedido}</span></div>
                     </div>
-                    <a href={linkWpp} target="_blank" onClick={() => conversaWpp(props, valorTotalDoPedido, setLinkWpp)}><button className="tudo_certo"><span>Tudo certo, Pode pedir!</span></button></a>
-                    <button className="cancelar" onClick={() => cancelarPedido(props)}><span>{props.children}</span></button>
+                    
                 </div>
+                <div class="finalizar"><a href={linkWpp} target="_blank" onClick={() => conversaWpp(props, valorTotalDoPedido, setLinkWpp)}><button className="tudo_certo"><span>Tudo certo, Pode pedir!</span></button></a></div>
+                <div class="finalizar"><button className="cancelar" onClick={() => cancelarPedido(props)}><span>{props.children}</span></button></div>
             </>
         );
     } else {
