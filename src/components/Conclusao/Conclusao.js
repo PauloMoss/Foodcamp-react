@@ -3,8 +3,9 @@
 
 export default function Conclusao(props) {
     
+    const {contagemItens} = props
 
-    if(props.prato!==0 && props.bebida!==0 && props.sobremesa!==0) {
+    if(contagemItens.prato!==0 && contagemItens.bebida!==0 && contagemItens.sobremesa!==0) {
 
         return (
             <div className="conclusao_pedido">

@@ -4,22 +4,26 @@ export default function atualizarPedido(props, nome, contador, valorDoItem) {
 
     const {tipo} = props
     const {variaveisArmazenamento} = props.variaveisEstado;
-    const {pedPrato, setPedPrato, pedBeb, setPedBeb, pedSobr, setPedSobr} = variaveisArmazenamento
+    const {armazenarPedido, setArmazenarPedido} = variaveisArmazenamento
+
+    // Eu gostaria de criar uma funcao generica pra fazer a atualizacao, mas nao consegui passar a chave do objeto como parametro! :(
 
     if(tipo === "prato") {
-        atualizar(setPedPrato, pedPrato, nome, contador, valorDoItem)
+        const atualizar = armazenarPedido.prato.find(i => i.nome === nome);
+        atualizar.quantidade = contador
+        atualizar.valor = (contador * valorDoItem)
+        setArmazenarPedido({...armazenarPedido, prato: [...armazenarPedido.prato.filter(i => i.nome !== nome), atualizar]})
     }
     if(tipo === "bebida") {
-        atualizar(setPedBeb, pedBeb, nome, contador, valorDoItem)
+        const atualizar = armazenarPedido.bebida.find(i => i.nome === nome);
+        atualizar.quantidade = contador
+        atualizar.valor = (contador * valorDoItem)
+        setArmazenarPedido({...armazenarPedido, bebida: [...armazenarPedido.bebida.filter(i => i.nome !== nome), atualizar]})
     }
     if(tipo === "sobremesa") {
-        atualizar(setPedSobr, pedSobr, nome, contador, valorDoItem)
+        const atualizar = armazenarPedido.sobremesa.find(i => i.nome === nome);
+        atualizar.quantidade = contador
+        atualizar.valor = (contador * valorDoItem)
+        setArmazenarPedido({...armazenarPedido, sobremesa: [...armazenarPedido.sobremesa.filter(i => i.nome !== nome), atualizar]})
     }
-}
-
-function atualizar(funcaoArmazenarPedido, pedido, nome, contador, valorDoItem) {
-    const atualizar = pedido.find(i => i.nome === nome);
-    atualizar.quantidade = contador
-    atualizar.valor = (contador * valorDoItem)
-    funcaoArmazenarPedido([...pedido.filter(i => i.nome !== nome), atualizar])
 }

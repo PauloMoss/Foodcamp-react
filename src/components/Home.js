@@ -12,15 +12,18 @@ export default function Home(props) {
     const [contagemBebida, setContagemBebida] = React.useState(0);
     const [contagemSobremesa, setContagemSobremesa] = React.useState(0);
 
+    const [contagemItens, setContagemItens] = React.useState(({prato: 0, bebida: 0, sobremesa: 0}))
+    console.log(contagemItens)
+
     return (
         <>
             <Topo />
 
-            <Pratos setContPrato={setContagemPrato} contPrato={contagemPrato} variaveisArmazenamento={props} />
-            <Bebidas setContBeb={setContagemBebida} contBeb={contagemBebida} variaveisArmazenamento={props} />
-            <Sobremesas setContSobr={setContagemSobremesa} contSobr={contagemSobremesa} variaveisArmazenamento={props} />
+            <Pratos variaveisArmazenamento={props} contagemItens={contagemItens} setContagemItens={setContagemItens} />
+            <Bebidas variaveisArmazenamento={props} contagemItens={contagemItens} setContagemItens={setContagemItens} />
+            <Sobremesas variaveisArmazenamento={props} contagemItens={contagemItens} setContagemItens={setContagemItens} />
             
-            <Conclusao link={props.children} prato={contagemPrato} bebida={contagemBebida} sobremesa={contagemSobremesa}/>
+            <Conclusao link={props.children} contagemItens={contagemItens} />
         </>        
     );
 }

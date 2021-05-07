@@ -1,28 +1,24 @@
 
 export default function gerarPedido(props, dadosDoPedido) {
-
+    
     const {tipo} = props;
-    const {setContPrato, contPrato, setContBeb, contBeb, setContSobr, contSobr} = props.variaveisEstado;
+    const {contagemItens, setContagemItens}  = props.variaveisEstado;
     const {variaveisArmazenamento} = props.variaveisEstado;
-    const {pedPrato, setPedPrato, pedBeb, setPedBeb, pedSobr, setPedSobr} = variaveisArmazenamento
+    const {armazenarPedido, setArmazenarPedido} = variaveisArmazenamento
 
     if(tipo === "prato") {
-        pedidoDoItem(setContPrato, contPrato, setPedPrato, pedPrato, dadosDoPedido)
+
+        setContagemItens({...contagemItens, prato: (contagemItens.prato + 1)})
+        setArmazenarPedido({...armazenarPedido, prato: [...armazenarPedido.prato, dadosDoPedido]})
     }
     if(tipo === "bebida") {
-        pedidoDoItem(setContBeb, contBeb, setPedBeb, pedBeb, dadosDoPedido)
+        
+        setContagemItens({...contagemItens, bebida: (contagemItens.bebida + 1)})
+        setArmazenarPedido({...armazenarPedido, bebida: [...armazenarPedido.bebida, dadosDoPedido]})
     }
     if(tipo === "sobremesa") {
-        pedidoDoItem(setContSobr, contSobr, setPedSobr, pedSobr, dadosDoPedido)
+        
+        setContagemItens({...contagemItens, sobremesa: (contagemItens.sobremesa + 1)})
+        setArmazenarPedido({...armazenarPedido, sobremesa: [...armazenarPedido.sobremesa, dadosDoPedido]})
     }
-}
-
-function pedidoDoItem(funcaoContagem, contagem, funcaoArmazenarPedido, pedido, dadosDoPedido) {
-    funcaoContagem(contagem + 1)
-
-        if(contagem === 0) {
-            funcaoArmazenarPedido([dadosDoPedido])
-        } else {
-            funcaoArmazenarPedido([...pedido, dadosDoPedido])
-        } 
 }
