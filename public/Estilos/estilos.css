@@ -33,14 +33,14 @@ h2 {
 ul {
     display: flex;
     overflow: scroll;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    -ms-overflow-style: none;  
     height: 216px;
     background-color: #E5E5E5;
     margin-top: 17px;
     padding: 0px 11px 3px 11px;
 }
 ul::-webkit-scrollbar {  
-    display: none;  /* Safari and Chrome */
+    display: none;  
 }
 ul:last-of-type {
     margin-bottom: 108px;
@@ -116,15 +116,6 @@ button {
 .pedido_fechado {
     font-weight: 700;
     background: #32B72F;
-}
-.fundoEmbacado {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
 }
 .confirme_pedido {
     position: fixed;

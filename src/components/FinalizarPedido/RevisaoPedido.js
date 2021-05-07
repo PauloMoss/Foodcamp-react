@@ -12,7 +12,6 @@ export default function RevisaoPedido(props) {
     prato.forEach(p => {valorTotalDoPedido += p.valor});
     bebida.forEach(b => {valorTotalDoPedido += b.valor});
     sobremesa.forEach(s => {valorTotalDoPedido += s.valor});
-
     valorTotalDoPedido = (String(valorTotalDoPedido.toFixed(2))).replace(".", ",")
 
     if(prato!==[] && bebida!==[] && sobremesa!==[]) {
@@ -22,9 +21,9 @@ export default function RevisaoPedido(props) {
                 <div className="confirme_pedido">
                     <p>Confirme seu pedido</p>
                     <div className="menuEscolhido">
-                        {prato.map(p=> (<div><span>{p.nome} {(p.quantidade === 1) ? "" : `(x${p.quantidade})`}</span> <span>R$ {(String(p.valor.toFixed(2))).replace(".", ",")}</span></div>))}
-                        {bebida.map(b=> (<div><span>{b.nome} {(b.quantidade === 1) ? "" : `(x${b.quantidade})`}</span> <span>R$ {(String(b.valor.toFixed(2))).replace(".", ",")}</span></div>))}
-                        {sobremesa.map(s=> (<div><span>{s.nome} {(s.quantidade === 1) ? "" : `(x${s.quantidade})`}</span> <span>R$ {(String(s.valor.toFixed(2))).replace(".", ",")}</span></div>))}
+                        {prato.map(p=> (<div><span>{p.nome} {(p.quantidade === 1) ? "" : `(x${p.quantidade})`}</span><span>R$ {(String(p.valor.toFixed(2))).replace(".", ",")}</span></div>))}
+                        {bebida.map(b=> (<div><span>{b.nome} {(b.quantidade === 1) ? "" : `(x${b.quantidade})`}</span><span>R$ {(String(b.valor.toFixed(2))).replace(".", ",")}</span></div>))}
+                        {sobremesa.map(s=> (<div><span>{s.nome} {(s.quantidade === 1) ? "" : `(x${s.quantidade})`}</span><span>R$ {(String(s.valor.toFixed(2))).replace(".", ",")}</span></div>))}
 
                         <div className="total"><span>TOTAL</span><span>R$ {valorTotalDoPedido}</span></div>
                     </div>
@@ -34,7 +33,7 @@ export default function RevisaoPedido(props) {
             </>
         );
     } else {
-        return alert()
+        return alert("Erro")
     }
 }
 

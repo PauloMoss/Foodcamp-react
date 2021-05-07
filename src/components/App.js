@@ -7,19 +7,18 @@ import RevisaoPedido from './FinalizarPedido/RevisaoPedido';
 export default function App() {
 
     const [armazenarPedido, setArmazenarPedido] = React.useState({prato: [], bebida: [], sobremesa: []})
-    console.log(armazenarPedido)
     
     return (
         <Router>
             <Switch>
                 <Route exact path="/">
                     <Home armazenarPedido={armazenarPedido} setArmazenarPedido={setArmazenarPedido}>
-                        <Link to="/revisar">Fechar Pedido</Link>
+                        <Link to="/revisar"><button className="pedido_fechado" >Fechar Pedido</button></Link>
                     </Home>
                 </Route>
                 <Route path="/revisar">
                     <RevisaoPedido armazenarPedido={armazenarPedido} setArmazenarPedido={setArmazenarPedido}>
-                        <Link to="/">Cancelar</Link>
+                        <Link to="/" >Cancelar</Link>
                     </RevisaoPedido>
                 </Route>
             </Switch>
