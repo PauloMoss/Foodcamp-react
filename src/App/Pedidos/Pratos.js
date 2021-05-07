@@ -4,6 +4,8 @@ import ItemMenu from "./ItemMenu";
 export default function Pratos(props) {
 
     const {setPrato, prato} = props;
+    const {pedidoPrato, setPedidoPrato} = props;
+
     
     const cardapioDePratos = [
         {nome: "Frango yin yang", preco: "14,90", imagem: "Img/frango_yin_yang 1.png", descricao: "Um pouco de batata, um pouco de salada"},
@@ -18,7 +20,7 @@ export default function Pratos(props) {
             <ul className="prato">
 
                 {cardapioDePratos.map(p=> (
-                <ItemMenu tipo="prato" nome={p.nome} preco={p.preco} imagem={p.imagem} descricao={p.descricao} setPrato={setPrato} prato={prato}/>
+                <ItemMenu tipo="prato" nome={p.nome} preco={p.preco} imagem={p.imagem} descricao={p.descricao} setPrato={setPrato} prato={prato} pedidoPrato={pedidoPrato} setPedidoPrato={setPedidoPrato}/>
                 ))}
 
             </ul>

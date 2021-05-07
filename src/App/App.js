@@ -13,13 +13,17 @@ export default function App() {
     const [bebidaSelecionada, setBebidaSelecionada] = React.useState(0);
     const [sobremesaSelecionada, setSobremesaSelecionada] = React.useState(0);
 
+    const [pedidoPrato, setPedidoPrato] = React.useState();
+    const [pedidoBebida, setPedidoBebida] = React.useState();
+    const [pedidoSobremesa, setPedidoSobremesa] = React.useState();
+
     return (
         <>
             <Topo />
 
-            <Pratos setPrato={setPratoSelecionado} prato={pratoSelecionado} />
-            <Bebidas setBebida={setBebidaSelecionada} bebida={bebidaSelecionada} />
-            <Sobremesas setSobremesa={setSobremesaSelecionada} sobremesa={sobremesaSelecionada} />
+            <Pratos setPrato={setPratoSelecionado} prato={pratoSelecionado} pedidoPrato={pedidoPrato} setPedidoPrato={setPedidoPrato} />
+            <Bebidas setBebida={setBebidaSelecionada} bebida={bebidaSelecionada} pedidoBebida={pedidoBebida} setPedidoBebida={setPedidoBebida} />
+            <Sobremesas setSobremesa={setSobremesaSelecionada} sobremesa={sobremesaSelecionada} pedidoSobremesa={pedidoSobremesa} setPedidoSobremesa={setPedidoSobremesa} />
             
             <Conclusao prato={pratoSelecionado} bebida={bebidaSelecionada} sobremesa={sobremesaSelecionada}/>
         </>

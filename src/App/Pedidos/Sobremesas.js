@@ -3,6 +3,7 @@ import ItemMenu from "./ItemMenu";
 export default function Sobremesas(props) {
 
     const {setSobremesa, sobremesa} = props;
+    const {pedidoSobremesa, setPedidoSobremesa} = props;
 
     const cardapioDeSobremesas = [
         {tipo: "Sobremesa", nome: "Pudim", preco: "12,20", imagem: "Img/pudim 1.png", descricao: "Pudim tradicional"},
@@ -16,7 +17,7 @@ export default function Sobremesas(props) {
             <ul className="sobremesa">
                 
                 {cardapioDeSobremesas.map(s => (
-                <ItemMenu tipo="sobremesa" nome={s.nome} preco={s.preco} imagem={s.imagem} descricao={s.descricao} setSobremesa={setSobremesa} sobremesa={sobremesa}/>
+                <ItemMenu tipo="sobremesa" nome={s.nome} preco={s.preco} imagem={s.imagem} descricao={s.descricao} setSobremesa={setSobremesa} sobremesa={sobremesa} pedidoSobremesa={pedidoSobremesa} setPedidoSobremesa={setPedidoSobremesa}/>
                 ))}
 
             </ul>

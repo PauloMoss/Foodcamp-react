@@ -3,6 +3,7 @@ import ItemMenu from './ItemMenu';
 export default function Bebidas(props) {
 
     const {setBebida, bebida} = props;
+    const {pedidoBebida, setPedidoBebida} = props;
 
     const cardapioDeBebidas = [
         {nome: "Coquinha gelada", preco: "4,80", imagem: "Img/coquinha_gelada 1.png", descricao: "Lata 350ml"},
@@ -16,7 +17,7 @@ export default function Bebidas(props) {
             <ul className="bebida">
                 
                 {cardapioDeBebidas.map(b => (
-                <ItemMenu tipo="bebida" nome={b.nome} preco={b.preco} imagem={b.imagem} descricao={b.descricao} setBebida={setBebida} bebida={bebida} />
+                <ItemMenu tipo="bebida" nome={b.nome} preco={b.preco} imagem={b.imagem} descricao={b.descricao} setBebida={setBebida} bebida={bebida} pedidoBebida={pedidoBebida} setPedidoBebida={setPedidoBebida}/>
                 ))}
 
             </ul>
