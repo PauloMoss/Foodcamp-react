@@ -147,16 +147,19 @@ button {
     font-weight: bold;
     margin-bottom: 15px;
 }
-.confirme_pedido div {
+.menuEscolhido {
+    width: 100%;
+}
+.menuEscolhido div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 .total {
     font-weight: bold;
-    margin-bottom: 20px;
+    padding: 10px 0;
 }
 .confirme_pedido button {
     width: 280px;

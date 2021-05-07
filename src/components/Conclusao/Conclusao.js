@@ -1,4 +1,6 @@
 
+
+
 export default function Conclusao(props) {
     
 
@@ -6,7 +8,7 @@ export default function Conclusao(props) {
 
         return (
             <div className="conclusao_pedido">
-                <button className="pedido_fechado" onclick="confirmação_de_Pedido()">Fechar Pedido</button>
+                <button className="pedido_fechado" >{props.link}</button>
             </div>
         );
 
@@ -14,7 +16,7 @@ export default function Conclusao(props) {
 
         return (
             <div className="conclusao_pedido">
-                <button className="pedido_aberto" onclick="confirmação_de_Pedido()">Selecione os 3 itens para fechar o pedido</button>
+                <button className="pedido_aberto" >Selecione os 3 itens para fechar o pedido</button>
             </div>
         );
     }
