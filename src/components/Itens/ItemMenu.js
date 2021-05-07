@@ -44,9 +44,9 @@ export default function ItemMenu(props) {
             <div className="descricao_conteudo">{descricao}</div>
             <span>R$</span> <span class="preço">{preco}</span>
             <div className="quantidade">
-                <ion-icon name="remove-sharp" className="remover" onClick={diminuir}></ion-icon>
+                <ion-icon name="remove-sharp" class="remover" onClick={diminuir}></ion-icon>
                 {contador}
-                <ion-icon name="add-sharp" className="adicionar" onClick={aumentar}></ion-icon>
+                <ion-icon name="add-sharp" class="adicionar" onClick={aumentar}></ion-icon>
             </div>
         </li>
     );
